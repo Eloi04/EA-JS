@@ -9,8 +9,11 @@ fetch('https://jsonplaceholder.typicode.com/users/')
   .then(response => response.json())
   .then(users => {
       // YOUR CODE STARTS HERE
-      console.log("--- Processed Users ---");
       // 1. Filter even IDs
+      console.log("--- Processed Users ---");
+         const res1 = users.filter((user) => user.id %2 === 0);
+         console.log("Filtered Users:", res1);
+     
       // 2. Map to clean objects {id, name, city}
       // 3. Add Guest User at the start using Spread (...)
       

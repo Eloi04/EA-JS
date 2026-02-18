@@ -124,3 +124,5 @@ if (true) {
     let alsoBlockScoped = "Me too";
 }
 // console.log(blockScoped); // ❌ ReferenceError: Not defined outside the block.
+// const significa una variable que no es modificable
+//LET en canvio es modificable
