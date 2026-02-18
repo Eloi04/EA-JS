@@ -13,9 +13,14 @@ fetch('https://jsonplaceholder.typicode.com/users/')
       console.log("--- Processed Users ---");
          const res1 = users.filter((user) => user.id %2 === 0);
          console.log("Filtered Users:", res1);
-     
+
       // 2. Map to clean objects {id, name, city}
-      // 3. Add Guest User at the start using Spread (...)
+          const res2 = res1.map(user => {
+            const { id, name, address } = user;
+            return { id, name, city: address.city };
+          });
+          console.log("Mapped Users:", res2);
+         // 3. Add Guest User at the start using Spread (...)
       
       console.log("--- Statistics ---");
       // 4. Reduce to count total characters in names
