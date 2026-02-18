@@ -21,7 +21,12 @@ fetch('https://jsonplaceholder.typicode.com/users/')
           });
           console.log("Mapped Users:", res2);
          // 3. Add Guest User at the start using Spread (...)
+          const guestUser = { id: 0, name: "Eloi Zamora", city: "Barcelona" };
+          const res3 = [guestUser, ...res2];  
+          console.log("Users:", res3);
       
-      console.log("--- Statistics ---");
+        console.log("--- Statistics ---");
       // 4. Reduce to count total characters in names
+      const totalNameLength = res3.reduce((sum, user) => sum + user.name.length, 0);
+      console.log("Total Characters in Names:", totalNameLength);
   });
